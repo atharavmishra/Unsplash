@@ -1,4 +1,4 @@
-package com.example.unsplash.model
+package com.example.unsplash.data.remote
 
 import android.app.appsearch.SearchResult
 import com.example.paging3demo.model.UnsplashImage
