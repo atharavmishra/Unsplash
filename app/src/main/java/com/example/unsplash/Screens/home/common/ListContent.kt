@@ -30,10 +30,6 @@ import androidx.paging.compose.items
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.example.paging3demo.model.UnsplashImage
-import com.example.paging3demo.model.Urls
-import com.example.paging3demo.model.User
-import com.example.paging3demo.model.UserLinks
-import com.example.paging3demo.ui.theme.HeartRed
 import com.example.unsplash.R
 import com.example.unsplash.model.Urls
 import com.example.unsplash.model.User
@@ -73,7 +69,7 @@ fun UnsplashItem(unsplashImage: UnsplashImage) {
             .clickable {
                 val browserIntent = Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("https://unsplash.com/@${unsplashImage.user.username}?utm_source=DemoApp&utm_medium=referral")
+                    Uri.parse("https://unsplash.com/@${unsplashImage}?utm_source=DemoApp&utm_medium=referral")
                 )
                 startActivity(context, browserIntent, null)
             }
@@ -106,7 +102,7 @@ fun UnsplashItem(unsplashImage: UnsplashImage) {
                 text = buildAnnotatedString {
                     append("Photo by ")
                     withStyle(style = SpanStyle(fontWeight = FontWeight.Black)) {
-                        append(unsplashImage.user.username)
+                        append(unsplashImage.user.usernmae)
                     }
                     append(" on Unsplash")
                 },
@@ -138,7 +134,7 @@ fun LikeCounter(
         Icon(
             painter = painter,
             contentDescription = "Heart Icon",
-            tint = HeartRed
+            tint = Color.Red
         )
         Divider(modifier = Modifier.width(6.dp))
         Text(
@@ -161,7 +157,7 @@ fun UnsplashImagePreview() {
             id = "1",
             urls = Urls(regular = ""),
             likes = 100,
-            user = User(username = "Stevdza-San", userLinks = UserLinks(html = ""))
+            user = User( UserLinks(""), "Atharv")
         )
     )
 }
