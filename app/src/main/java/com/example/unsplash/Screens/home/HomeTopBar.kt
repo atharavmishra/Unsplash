@@ -5,6 +5,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.unsplash.ui.theme.topAppBarBackgroundColor
+import com.example.unsplash.ui.theme.topAppBarContentColor
 
 @Composable
 fun HomeTopBar(
